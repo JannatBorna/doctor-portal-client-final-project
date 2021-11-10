@@ -126,7 +126,7 @@ const useFirebase = () => {
 
 // admin data load- admin verified - যার email দেয়েছি সে কি admin or admin না - admin অনেক জায়গায় check করতে পারি তাই useFirebase এ করা হয়েছে
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://shielded-reef-54688.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -153,7 +153,7 @@ const logOut =() => {
 // Save Registered user information in the database / //user j data তৈরি করবে / redister /google.. korbe tar information database a thakbe.. সেই data .. database a রাখবো / saveUser ke sudu call kora hoise register modhe tai sudu register a kaj korbe - login a na
  const saveUser = (email, displayName, method) => {
    const user = {email, displayName};
-     fetch('http://localhost:5000/users',{
+     fetch('https://shielded-reef-54688.herokuapp.com/users',{
        method: method,
        headers: {
            'content-type': 'application/json'
